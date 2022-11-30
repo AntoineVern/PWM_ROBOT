@@ -6,39 +6,52 @@ void setup() {
   Serial.begin(115200);
 
 // --Moteur1--
-pinMode(A0, OUTPUT);
+pinMode(5, OUTPUT);
 // --Moteur2--
-pinMode(A1, OUTPUT);
+pinMode(18, OUTPUT);
 // --Moteur3--
-pinMode(A2, OUTPUT);
+pinMode(19, OUTPUT);
 // --Moteur4--
-pinMode(A3, OUTPUT);
+pinMode(16, OUTPUT);
 // --Moteur5--
-pinMode(A4, OUTPUT);
+pinMode(17, OUTPUT);
 // --Moteur6--
-pinMode(A5, OUTPUT);
+pinMode(21, OUTPUT);
 
 // Configurer fonction du PWM
-ledcSetup(A0, 10, 8);
+ledcSetup(0, 10, 8);
+ledcSetup(1, 10, 8);
+ledcSetup(2, 10, 8);
+ledcSetup(3, 10, 8);
+ledcSetup(4, 10, 8);
+ledcSetup(5, 10, 8);
+
+// Attache le canal au GPIO pour etre controller
+  ledcAttachPin(5, 0);
+  ledcAttachPin(18, 1);
+  ledcAttachPin(19, 2);
+  ledcAttachPin(16, 3);
+  ledcAttachPin(17, 4);
+  ledcAttachPin(21, 5);
 }
 
 void loop() {
-  if (){
-    ledcWrite(0, PWM);
-  }
-  if (){
-    
-  }
-  if (){
-    
-  }
-  if (){
-    
-  }
-  if (){
-    
-  }
-  if (){
-    
-  }
+  //if (){
+    ledcWrite(0, 42);
+  //}
+  //if (){
+    ledcWrite(1, 84);
+  //}
+  //if (){
+    ledcWrite(2, 126);
+  //}
+  //if (){
+    ledcWrite(3, 168);
+  //}
+  //if (){
+    ledcWrite(4, 210);
+  //}
+  //if (){
+    ledcWrite(5, 252);
+  //}
 }
